@@ -1,3 +1,10 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 * {
   font-family :Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -10,6 +17,7 @@
   margin: 30px auto;
   padding: 30px;
   border-radius: 20px;
+  color: #a1a1a1;
 }
 
 h1,h2,h3,p {

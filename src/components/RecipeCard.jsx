@@ -3,13 +3,11 @@
 import React from 'react'
 
 const RecipeCard = ({recipe}) => {
-   //console.log(recipe);
-   //console.log(recipe.strCategory);
-   //const {idMeal,strMeal,strCategory,strMealThumb} = recipe.meals;
+   
   return (
     <div className='card'>
        {recipe.map((recipeObj) => (
-        <div key={recipeObj.idMeal}>
+        <div key={recipeObj.idMeal} className='card'>
             <img 
                 src={recipeObj.strMealThumb}
                 alt={recipeObj.strMeal}
