@@ -10,7 +10,7 @@ const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 function App() {
   const[isLoading, setisLoading] = useState(false);
-  const [query, setQuery] = useState('');
+  //const [query, setQuery] = useState('');
   const[recipe, setRecipe] = useState([]);
 
   //search Recipe function
@@ -37,6 +37,13 @@ function App() {
   return (
     <div className='container'>
       <h2>Recipe App</h2>
+      <SearchBar
+         isLoading={isLoading}
+         recipeSearch = {searchRecipe} 
+      />
+
+
+
       <div className="recipes">
       {recipe ? <RecipeCard recipe={recipe}/> :<p>No Recipes</p>}
       </div>
