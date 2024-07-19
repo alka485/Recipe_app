@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState,useEffect } from 'react'
+import axios from 'axios'
 import './App.css'
 //----------------------------------------import dependency
 import RecipeCard from './components/RecipeCard'
@@ -13,11 +15,23 @@ function App() {
 
   //search Recipe function
 
-  const searchRecipe = async () => {
+  const searchRecipe = async (searchTerm) => {
     setisLoading(true);
-    
+    const url = apiUrl + searchTerm;
+    try {
+      let res = await axios.get(url);
+      console.log(res.data);
+      setRecipe(res.data)
+      setisLoading(false);
 
+    } catch (err) {
+      console.error(err);
+    }
   }
+
+  useEffect(()=> {
+    searchRecipe("egg")
+  }, [])
  
 
   return (
