@@ -20,8 +20,8 @@ function App() {
     const url = apiUrl + searchTerm;
     try {
       let res = await axios.get(url);
-      console.log(res.data);
-      setRecipe(res.data)
+      console.log(res.data.meals);
+      setRecipe(res.data.meals)
       setisLoading(false);
 
     } catch (err) {
