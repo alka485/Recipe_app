@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
 const RecipeCard = ({recipe}) => {
-   console.log(recipe);
+   //console.log(recipe);
    //console.log(recipe.strCategory);
    //const {idMeal,strMeal,strCategory,strMealThumb} = recipe.meals;
   return (
