@@ -12,14 +12,17 @@ function App() {
   const[isLoading, setisLoading] = useState(false);
   //const [query, setQuery] = useState('');
   const[recipe, setRecipe] = useState([]);
+  const[search, setSearch] = useState('');
 
+  // Handler for what happens when the search form is submitted
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    searchRecipe(recipe);
+    searchRecipe(search);
   }
 
+  // Handler for input changes to the search form
   const handleInputChange = (e) => {
-    setRecipe(e.target.value)
+    setSearch(e.target.value)
   }
 
   //search Recipe function
@@ -46,13 +49,10 @@ function App() {
     <div className='container'>
       <h2>Recipe App</h2>
       <SearchBar 
-            value = {recipe}
+            value = {search}
             handleInputChange={handleInputChange}
             handleFormSubmit={handleFormSubmit}
       />
-
-
-
       <div className="recipes">
       {recipe ? <RecipeCard recipe={recipe}/> :<p>No Recipes</p>}
       </div>
