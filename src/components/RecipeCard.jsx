@@ -2,15 +2,25 @@
 import React from 'react'
 
 const RecipeCard = ({recipe}) => {
-   console.log(recipe.meals);
+   console.log(recipe);
+   //console.log(recipe.strCategory);
    //const {idMeal,strMeal,strCategory,strMealThumb} = recipe.meals;
   return (
     <div className='card'>
-        {/* <img src={recipe.strMealThumb} alt="" /> */}
-        <h1>Hello{}</h1>
-        <div className="card-body">
-            {/* <span className="category">{strCategory}</span> */}
+       {recipe.map((recipeObj) => (
+        <div key={recipeObj.idMeal}>
+            <img 
+                src={recipeObj.strMealThumb}
+                alt={recipeObj.strMeal}
+                className='card-image'
+            />
+            <div className="card-body">
+                <span className="category">{recipeObj.strCategory}</span>
+                <h3>{recipeObj.strMeal}</h3>
+                <a href={"https://www.themealdb.com/meal/" + recipeObj.idMeal} target="_blank">Instructions</a>
+            </div>
         </div>
+       ))}
         
     </div>
   )
