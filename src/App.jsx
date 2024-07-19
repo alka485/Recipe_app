@@ -13,8 +13,16 @@ function App() {
   //const [query, setQuery] = useState('');
   const[recipe, setRecipe] = useState([]);
 
-  //search Recipe function
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    searchRecipe(recipe);
+  }
 
+  const handleInputChange = (e) => {
+    setRecipe(e.target.value)
+  }
+
+  //search Recipe function
   const searchRecipe = async (searchTerm) => {
     setisLoading(true);
     const url = apiUrl + searchTerm;
@@ -37,9 +45,10 @@ function App() {
   return (
     <div className='container'>
       <h2>Recipe App</h2>
-      <SearchBar
-         isLoading={isLoading}
-         recipeSearch = {searchRecipe} 
+      <SearchBar 
+            value = {recipe}
+            handleInputChange={handleInputChange}
+            handleFormSubmit={handleFormSubmit}
       />
 
 

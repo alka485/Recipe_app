@@ -2,11 +2,15 @@
 import React from 'react'
 import { useState } from 'react'
 
+const SearchBar = (props) => {
+    console.log(props);
 
+    
 
-const SearchBar = () => {
   return (
-    <div>SearchBar</div>
+    <div>
+        
+    </div>
   )
 }
 
