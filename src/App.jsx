@@ -36,10 +36,9 @@ function App() {
 
   return (
     <div className='container'>
-      <h2>Our Food Recipes</h2>
-      <SearchBar/>
+      <h2>Recipe App</h2>
       <div className="recipes">
-        <RecipeCard/>
+      {recipe ? <RecipeCard recipe={recipe}/> :<p>No Recipes</p>}
       </div>
     </div>
   )
